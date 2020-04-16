@@ -47,7 +47,7 @@ function NavPage(props) {
             <Menu onClick={handleClick} selectedKeys={current} mode="horizontal">
                 <Menu.Item key="/index">
                     <FlagOutlined />
-                    战场
+                    主页
         </Menu.Item>
                 <Menu.Item key="/Chat">
                     <MessageOutlined />
@@ -62,14 +62,14 @@ function NavPage(props) {
                     数据
         </Menu.Item>
             </Menu>
-            <div onClick={() => { handleClick({ key: '/User' }) }}>
+            <div >
                 <Search
                     placeholder="input search text"
                     onSearch={value => console.log(value)}
                     className={styles.inputNav}
                 />
                 <div>
-                    <div>
+                    <div onClick={() => { handleClick({ key: '/User' }) }}>
                         <span className="avatar-item">
                             <Avatar icon={<UserOutlined />} />
                         </span>

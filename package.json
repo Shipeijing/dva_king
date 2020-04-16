@@ -11,6 +11,8 @@
     "babel-plugin-import": "^1.13.0",
     "dva": "^2.4.1",
     "dva-loading": "^3.0.20",
+    "echarts": "^4.7.0",
+    "echarts-for-react": "^2.0.15-beta.1",
     "history": "^4.10.1",
     "nprogress": "^0.2.0",
     "react": "^16.2.0",
