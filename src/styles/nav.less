@@ -1,0 +1,63 @@
+.MenuCenter {
+  box-shadow: 0 5px 5px #d8d8d8;
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 0 50px;
+  font-size: 16px !important;
+
+  li {
+    line-height: 70px;
+    letter-spacing: 1px;
+  }
+
+  >div {
+    &:nth-of-type(1) {
+      min-width: 160px;
+    }
+
+    &:nth-of-type(2) {
+      min-width: 440px;
+    }
+
+    width: 35%;
+    max-width: 600px;
+    line-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    >div {
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 20px;
+      float: right;
+      margin: 0;
+      margin-left: 10px;
+      color: #ffbf00;
+      letter-spacing: 1px;
+    }
+
+    img {
+      width: 50px;
+    }
+  }
+
+  .inputNav {
+    width: calc(100% - 50px);
+    border-radius: 50px;
+    margin-right: 30px;
+    background: #f0f0f0;
+    border: 0;
+
+    input {
+      background: #f0f0f0;
+    }
+  }
+}
