@@ -3,14 +3,14 @@ import { connect } from 'dva';
 import styles from './style.less';
 import ReactEcharts from 'echarts-for-react';
 import { Statistic, Card, Row, Col } from 'antd';
-import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
+import { ArrowUpOutlined } from '@ant-design/icons';
 function IndexPage(props) {
   const CarList = [{
-    name: "一对一"
+    name: "匹配"
   }, {
-    name: "群聊"
+    name: "世界"
   }, {
-    name: "开房间"
+    name: "开房"
   }]
   let option = {
 
@@ -91,54 +91,53 @@ function IndexPage(props) {
       }
     ]
   };
-  let dataList=[{name:'在线人数',num:11},{name:'匹配中',num:11},{name:'队伍中',num:11}]
+  let dataList = [{ name: '在线人数', num: 11 }, { name: '匹配中', num: 11 }, { name: '队伍中', num: 11 }]
   return (
     <div className={styles.index}>
-      <ul>{CarList.map((item, index) => {
-        return <li key={index}>{item.name}</li>
-      })}
-      </ul>
       <div>
-        <h4>实时数据台</h4>
-        <ul>
-          <li>
-            <Row gutter={16}>
-              <Col span={16}>
-                {dataList.map((item,index)=>{
-                  return ( <Card>
-                    <Statistic
-                      title={item.name}
-                      value={item.num}
-                      precision={2}
-                      valueStyle={{ color: '#3f8600' }}
-                      prefix={<ArrowUpOutlined />}
-                      suffix="%"
-                    />
-                  </Card>)
-                })}
-               
-              </Col>
-            </Row>
-          </li>
-          <li>
-            <ReactEcharts
-              option={option1}
-              style={{ width: '100%', height: '100%' }}
-            />
-          </li>
-          <li>
-            <ReactEcharts
-              option={option}
-              style={{ width: '100%', height: '100%' }}
-            />
-          </li>
+        <ul>{CarList.map((item, index) => {
+          return <li key={index}>{item.name}</li>
+        })}
         </ul>
-      </div>
+        <div>
+          <ul>
+            <li>
+              <Row gutter={16}>
+                <Col span={16}>
+                  {dataList.map((item, index) => {
+                    return (<Card>
+                      <Statistic
+                        title={item.name}
+                        value={item.num}
+                        precision={2}
+                        valueStyle={{ color: '#3f8600' }}
+                        prefix={<ArrowUpOutlined />}
+                        suffix="%"
+                      />
+                    </Card>)
+                  })}
 
+                </Col>
+              </Row>
+            </li>
+            <li>
+              <ReactEcharts
+                option={option1}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </li>
+            <li>
+              <ReactEcharts
+                option={option}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
-
 
 IndexPage.propTypes = {
 };

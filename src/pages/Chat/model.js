@@ -1,24 +1,25 @@
 export default {
 
-    namespace: 'Index',
+    namespace: 'Chat',
 
-    state: {},
+    state: {
+        navStatus: false
+    },
 
-    subscriptions: {
-        setup({ dispatch, history }) {  // eslint-disable-line
+    reducers: {//
+        changenavStatus(state, action) {
+            console.log(action)
+            return { ...state, navStatus: action.payload };
+        },
+    },
+    subscriptions: {//订阅
+        setup({ dispatch, history }) {
         },
     },
 
-    effects: {
+    effects: {//异步
         *fetch({ payload }, { call, put }) {  // eslint-disable-line
             yield put({ type: 'save' });
         },
     },
-
-    reducers: {
-        save(state, action) {
-            return { ...state, ...action.payload };
-        },
-    },
-
 };

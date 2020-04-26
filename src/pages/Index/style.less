@@ -1,37 +1,52 @@
 .index {
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
+  // background: url('../../assets/bg.jpg') no-repeat;
+  // background-size: 100% 100%;
+  // height: calc(~'100vh - 72px');
 
-  >ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 40vh;
+  >div {
+    width: 1000px;
+    margin: 0 auto;
 
-    >li {
-      width: 25%;
-      background: #ffffff;
-      box-shadow: 0 0px 5px #d8d8d8;
-      text-align: center;
-      line-height: 150px;
-      font-size: 24px;
-      border-radius: 10px;
-      cursor: pointer;
+    >ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40vh;
 
-      &:hover {
-        box-shadow: 0 0px 5px #ffbf00;
-        color: #ffbf00;
+      >li {
+        width: 25%;
+        background: #575757;
+        box-shadow: 0 0px 5px #777777;
+        text-align: center;
+        line-height: 150px;
+        font-size: 24px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: #ffffff;
+
+        &:hover {
+          box-shadow: 0 0px 5px #ffbf00;
+          color: #ffbf00;
+        }
       }
     }
-  }
-  >div{
-    
-    ul{
-      height: 40vh;
-      li{
-        height: 100%;
-        width: 33.33%;
-        float: left;
+
+    >div {
+      background: #575757;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0px 5px #777777;
+
+      ul {
+        height: 40vh;
+
+        li {
+          height: 100%;
+          width: 33.33%;
+          float: left;
+        }
       }
     }
   }

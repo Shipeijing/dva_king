@@ -8,7 +8,7 @@ import {
     FlagOutlined,
     MessageOutlined,
     FireOutlined,
-    UserOutlined,
+    TeamOutlined,
     BellOutlined,
     LineChartOutlined
 } from '@ant-design/icons';
@@ -17,6 +17,7 @@ const { Search } = Input;
 NProgress.configure({ showSpinner: false })
 function NavPage(props) {
     const [current, setCurrent] = useState('/index')
+    const [resize, setResize] = useState('')
     const handleClick = e => {
         NProgress.start();
         if (e.key === '/') {
@@ -35,13 +36,17 @@ function NavPage(props) {
         if (e.key !== current && e.key !== '/') {
             handleClick(e)
         }
+        window.addEventListener('resize', (e) => {
+            if (e.target.innerWidth < 1250) setResize('none')
+            else setResize('')
+        })
     });
     return (
         <div className={styles.MenuCenter}>
-            <div>
+            <div style={{ minWidth: resize === 'none' ? '80px' : '220px' }}>
                 <span>
                     <img src={require('../assets/yay.jpg')} alt="" />
-                    <h1>游乐场_Demo</h1>
+                    <h1 style={{ display: resize }}>游乐场_Demo</h1>
                 </span>
             </div>
             <Menu onClick={handleClick} selectedKeys={current} mode="horizontal">
@@ -57,21 +62,27 @@ function NavPage(props) {
                     <FireOutlined />
                     动态
         </Menu.Item>
+                <Menu.Item key="/Friends">
+                    <TeamOutlined />
+                    关注
+        </Menu.Item>
                 <Menu.Item key="/Statistics">
                     <LineChartOutlined />
                     数据
         </Menu.Item>
             </Menu>
-            <div >
+            <div style={{ minWidth: resize === 'none' ? '230px' : '420px' }}>
                 <Search
+                    style={{ display: resize }}
                     placeholder="input search text"
                     onSearch={value => console.log(value)}
                     className={styles.inputNav}
                 />
+
                 <div>
                     <div onClick={() => { handleClick({ key: '/User' }) }}>
                         <span className="avatar-item">
-                            <Avatar icon={<UserOutlined />} />
+                            <Avatar icon={require('../assets/logo.jpg')} />
                         </span>
                         <span style={{ marginLeft: 10 }}>
                             王富贵

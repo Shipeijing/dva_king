@@ -1,6 +1,6 @@
 export default {
 
-    namespace: 'Index',
+    namespace: 'Statistics',
 
     state: {},
 

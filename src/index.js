@@ -13,6 +13,10 @@ app.use(createLoading());
 // 3. Model
 app.model(require('./models/store').default);
 app.model(require('./pages/Index/model').default);
+app.model(require('./pages/Chat/model').default);
+app.model(require('./pages/Share/model').default);
+app.model(require('./pages/User/model').default);
+app.model(require('./pages/Statistics/model').default);
 // 4. Router
 app.router(require('./router').default);
 
