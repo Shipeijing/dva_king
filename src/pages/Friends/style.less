@@ -1,7 +1,30 @@
 .index {
+  >div {
+    background: #ffffff;
+    border-radius: 10px;
+    width: 80%;
+    margin: 30px auto 0 auto;
+    box-shadow: 0 0px 5px @box-shadow-bg-me;
+    padding: 20px;
+  }
+}
+
+.indexNav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  >div {
+    &:nth-of-type(2) {
+      width: calc(~'100% - 180px');
+    }
+  }
+}
+
+.indexBody {
   width: 100%;
   padding: 50px calc(~'(100% - 1200px)/2');
-  height: calc(~'100vh - 160px');
+  height: calc(~'100vh - 240px');
   overflow: auto;
 
   >div {

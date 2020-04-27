@@ -3,7 +3,7 @@ import { routerRedux } from 'dva/router';
 import styles from '../styles/nav.less'
 import NProgress from 'nprogress';
 import { connect } from 'dva';
-import { Menu, Select, Avatar, Badge, Input } from 'antd';
+import { Menu, Select, Badge, Input } from 'antd';
 import {
     FlagOutlined,
     MessageOutlined,
@@ -71,7 +71,7 @@ function NavPage(props) {
                     数据
         </Menu.Item>
             </Menu>
-            <div style={{ minWidth: resize === 'none' ? '230px' : '420px' }}>
+            <div style={{ minWidth: resize === 'none' ? '230px' : '450px' }}>
                 <Search
                     style={{ display: resize }}
                     placeholder="input search text"
@@ -82,7 +82,7 @@ function NavPage(props) {
                 <div>
                     <div onClick={() => { handleClick({ key: '/User' }) }}>
                         <span className="avatar-item">
-                            <Avatar icon={require('../assets/logo.jpg')} />
+                            <img src={require('../assets/logo.jpg')} alt='' />
                         </span>
                         <span style={{ marginLeft: 10 }}>
                             王富贵

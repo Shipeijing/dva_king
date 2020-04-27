@@ -2,7 +2,9 @@ export default {
 
     namespace: 'Share',
 
-    state: {},
+    state: {
+        bodyStatus: null
+    },
 
     subscriptions: {
         setup({ dispatch, history }) {  // eslint-disable-line
@@ -16,8 +18,8 @@ export default {
     },
 
     reducers: {
-        save(state, action) {
-            return { ...state, ...action.payload };
+        changebodyStatus(state, action) {
+            return { ...state, bodyStatus: action.payload };
         },
     },
 

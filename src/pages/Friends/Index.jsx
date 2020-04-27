@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './style.less';
-import { Card, Avatar, Popover, Button, Divider } from 'antd';
-import { EditOutlined, SettingOutlined, MessageOutlined } from '@ant-design/icons';
-
+import { Card, Radio, Input, Tooltip, Avatar, Popover, Button, Divider } from 'antd';
+import { EditOutlined, SettingOutlined, MessageOutlined, UserAddOutlined } from '@ant-design/icons';
+const { Search } = Input;
 const { Meta } = Card;
 function IndexPage() {
   const dataList = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -18,32 +18,57 @@ function IndexPage() {
     </Button>
     </div>
   );
+  function onChange(e) {
+    console.log(`radio checked:${e.target.value}`);
+  }
   return (
     <div className={styles.index}>
-      {dataList.map(item =>
+      <div className={styles.indexNav}>
         <div>
-          <Card
-            hoverable={'ture'}
-            style={{ width: 300 }}
-            cover={
-              <img
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+          <Radio.Group size={'middle'} onChange={onChange} defaultValue="a" buttonStyle="solid">
+            <Radio.Button value="a">热点</Radio.Button>
+            <Radio.Button value="b">最新</Radio.Button>
+          </Radio.Group>
+        </div>
+        <div>
+          <Search
+            size={'middle'}
+            placeholder="input search text"
+            onSearch={value => console.log(value)}
+            style={{ width: '100%' }}
+          /></div>
+        <div>
+          <Tooltip title="添加关注">
+            <Button size={'middle'} type="primary" shape="circle" icon={<UserAddOutlined />} />
+          </Tooltip>
+        </div>
+      </div>
+      <div className={styles.indexBody}>
+        {dataList.map(item =>
+          <div>
+            <Card
+              hoverable={'ture'}
+              style={{ width: 300 }}
+              cover={
+                <img
+                  alt="example"
+                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                />
+              }
+              actions={[
+                <MessageOutlined style={{ color: '#a0d911' }} key="setting" />,
+                <EditOutlined style={{ color: '#fadb14' }} key="edit" />,
+                <Popover content={content} placement="rightBottom">
+                  <SettingOutlined style={{ color: '#1890ff' }} key="ellipsis" /></Popover>
+              ]}
+            >
+              <Meta
+                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                title="Card title"
+                description="This is the description"
               />
-            }
-            actions={[
-              <MessageOutlined style={{ color: '#a0d911' }} key="setting" />,
-              <EditOutlined style={{ color: '#fadb14' }} key="edit" />,
-              <Popover content={content} placement="rightBottom">
-                <SettingOutlined style={{ color: '#1890ff' }} key="ellipsis" /></Popover>
-            ]}
-          >
-            <Meta
-              avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-              title="Card title"
-              description="This is the description"
-            />
-          </Card></div>)}
+            </Card></div>)}
+      </div>
     </div>
   );
 }

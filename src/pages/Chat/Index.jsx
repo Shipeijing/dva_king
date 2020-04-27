@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './style.less';
 import { Avatar, Popover, Badge, Input, Button, Divider } from 'antd';
-import { SmileOutlined, ManOutlined, CloseCircleOutlined, EllipsisOutlined, DeleteOutlined, ScissorOutlined, EditOutlined, PictureOutlined } from '@ant-design/icons';
+import { SmileOutlined, ManOutlined, CloseCircleOutlined, EllipsisOutlined, VideoCameraOutlined, WhatsAppOutlined, EditOutlined, PictureOutlined, ShoppingOutlined } from '@ant-design/icons';
 
 function IndexPage(props) {
   const datalist = [1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 11, 1, 0, 0, 1, 1, 1]
@@ -46,9 +46,11 @@ function IndexPage(props) {
         <div className={styles.chatBody}>
           <div>
             <h4>正在与陈帅对话...</h4>
-            <span> <EditOutlined />
-              <ScissorOutlined style={{ marginLeft: 10 }} />
-              <DeleteOutlined style={{ marginLeft: 10 }} />
+            <span>
+              <VideoCameraOutlined style={{ marginLeft: 10 }} />
+              <WhatsAppOutlined style={{ marginLeft: 10 }} />
+              <PictureOutlined style={{ marginLeft: 10 }} />
+              <EditOutlined style={{ marginLeft: 10 }} />
               <CloseCircleOutlined style={{ marginLeft: 10 }} /></span>
           </div>
           <Divider style={{ marginTop: 10 }}></Divider>
@@ -68,7 +70,7 @@ function IndexPage(props) {
           </div>
         </div>
         <div className={styles.chatBut}>
-          <Button shape="circle" style={{ marginRight: 10 }} type="link" icon={<PictureOutlined />} />
+          <Button shape="circle" style={{ marginRight: 10 }} type="link" icon={<ShoppingOutlined />} />
           <Button shape="circle" style={{ marginRight: 10 }} type="link" icon={<SmileOutlined />} />
           <Input
             style={{ marginRight: 10 }}

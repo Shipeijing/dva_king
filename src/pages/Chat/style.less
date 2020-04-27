@@ -13,6 +13,7 @@
   height: calc(~'100vh - 430px');
   overflow: auto;
   display: flex;
+  padding: 0 10px !important;
 
   >div {
     display: flex;
@@ -65,7 +66,6 @@
         >span {
           cursor: pointer;
           margin: 0 15px;
-
         }
       }
     }
@@ -75,8 +75,7 @@
     background: #ffffff;
     box-shadow: 0 0px 5px @box-shadow-bg-me;
     border-radius: 10px;
-    padding: 0px 30px;
-    margin-top: 50px;
+    margin-top: 30px;
 
     >span {
       cursor: pointer;
@@ -90,6 +89,7 @@
   width: calc(~'100% - 60px');
   position: absolute;
   bottom: 15px;
+  left: 30px;
   display: flex;
   align-items: center;
 
@@ -104,6 +104,7 @@
   >div {
     display: flex;
     justify-content: space-between;
+    padding: 0 30px;
 
     h4 {
       margin: 0;
@@ -120,7 +121,7 @@
   position: absolute !important;
   top: 0px;
   z-index: 10;
-  padding-top: 50px !important;
+  padding-top: 30px !important;
   border-radius: 0px 0px 10px 10px !important;
   transition: 0.5s top, 0.5s opacity, z-index 0.5s;
 }
