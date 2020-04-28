@@ -6,7 +6,7 @@ import SharePage from './pages/Share/Index';
 import UserPage from './pages/User/Index';
 import FriendsPage from './pages/Friends/Index';
 import StatisticsPage from './pages/Statistics/Index';
-import NavPage from './components/nav'
+import NavPage from './components/Nav'
 function RouterConfig({ history }) {
   return (
     <>

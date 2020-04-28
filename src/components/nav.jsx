@@ -54,13 +54,13 @@ function NavPage(props) {
                     <FlagOutlined />
                     主页
         </Menu.Item>
-                <Menu.Item key="/Chat">
-                    <MessageOutlined />
-                    消息
-        </Menu.Item>
                 <Menu.Item key="/Share">
                     <FireOutlined />
                     动态
+        </Menu.Item>
+                <Menu.Item key="/Chat">
+                    <MessageOutlined />
+                    消息
         </Menu.Item>
                 <Menu.Item key="/Friends">
                     <TeamOutlined />

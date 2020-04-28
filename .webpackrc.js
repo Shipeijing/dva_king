@@ -21,7 +21,7 @@ export default {
         }
     },
     theme: {
-        '@box-shadow-bg-me': '#d8d8d8',//自定义阴影
+        '@box-shadow-bg-me': '#a7a2a2',//自定义阴影
         '@primary-color': '#ffbf00', // 全局主色
         '@link-color': '#ffbf00', // 链接色
         '@success-color': '#52c41a', // 成功色

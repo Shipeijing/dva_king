@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './style.less';
+import styles from '../style.less';
 import { Comment, Avatar, Tooltip } from 'antd';
 import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled, HistoryOutlined } from '@ant-design/icons';
 

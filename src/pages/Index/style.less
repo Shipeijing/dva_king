@@ -4,49 +4,99 @@
   // background: url('../../assets/bg.jpg') no-repeat;
   // background-size: 100% 100%;
   // height: calc(~'100vh - 72px');
+  padding-top: 20px;
 
   >div {
     width: 1000px;
     margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+
+
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      color: #585858;
+    }
+
+    h4 {
+      font-size: 18px;
+      color: #777777;
+    }
+
 
     >ul {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 40vh;
+      height: 25vh;
+      width: 350px;
+      margin: 0 auto;
+      color: #ffffff;
 
       >li {
-        width: 25%;
+        &:nth-of-type(2) {
+          background: none;
+          border: 1px solid #ffffff;
+          color: #ffffff;
+        }
+
+        border: 1px solid #ffffff;
+        color: #837e7e;
+        width: 150px;
         background: #ffffff;
-        box-shadow: 0 0px 5px #777777;
+        box-shadow: 0 0px 10px #837e7e;
         text-align: center;
-        line-height: 150px;
-        font-size: 24px;
-        border-radius: 10px;
+        line-height: 40px;
+        font-size: 20px;
+        border-radius: 5px;
         cursor: pointer;
+        animation: pipei 2s ease-in-out infinite alternate;
 
         &:hover {
-          box-shadow: 0 0px 5px #ffbf00;
+          box-shadow: 0 0px 5px #ffbf00 !important;
           color: #ffbf00;
         }
       }
     }
 
-    >div {
-      // background: #ffffff;
-      // border-radius: 10px;
-      // padding: 20px;
-      // box-shadow: 0 0px 5px #777777;
-
-      ul {
-        height: 40vh;
-
-        li {
-          height: 100%;
-          width: 33.33%;
-          float: left;
-        }
+    @keyframes pipei {
+      0% {
+        box-shadow: 0 0px 5px #837e7e;
       }
+
+      100% {
+        box-shadow: 0 0px 15px #837e7e;
+      }
+    }
+  }
+}
+
+.indexNav {
+  width: 60% !important;
+  margin: 0px auto 0 auto !important;
+  padding: 20px;
+
+  >span {
+    border-radius: 10px;
+    box-shadow: 0 0px 5px #a7a2a2;
+  }
+}
+
+.nav {
+  width: 60%;
+  height: 35vh;
+  position: absolute;
+  bottom: 0px;
+  left: calc(~'(100% - 60%)/2');
+  background: #ffffff;
+  box-shadow: 0 0px 5px @box-shadow-bg-me;
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
+
+  ul {
+    li {
+      float: left;
     }
   }
 }
