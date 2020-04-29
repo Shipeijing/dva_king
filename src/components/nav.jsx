@@ -3,7 +3,7 @@ import { routerRedux } from 'dva/router';
 import styles from '../styles/nav.less'
 import NProgress from 'nprogress';
 import { connect } from 'dva';
-import { Menu, Select, Badge, Input } from 'antd';
+import { Menu, Select, Button, Badge, Input } from 'antd';
 import {
     FlagOutlined,
     MessageOutlined,
@@ -37,11 +37,14 @@ function NavPage(props) {
             handleClick(e)
         }
         window.addEventListener('resize', (e) => {
-            if (e.target.innerWidth < 1250) setResize('none')
+            if (e.target.innerWidth < 1400) setResize('none')
             else setResize('')
         })
     });
-    return (
+    function goLogin() {
+        props.dispatch(routerRedux.push('/Login'))
+    }
+    return (current !== '/Login' ?
         <div className={styles.MenuCenter}>
             <div style={{ minWidth: resize === 'none' ? '80px' : '220px' }}>
                 <span>
@@ -71,7 +74,7 @@ function NavPage(props) {
                     数据
         </Menu.Item>
             </Menu>
-            <div style={{ minWidth: resize === 'none' ? '230px' : '450px' }}>
+            <div style={{ minWidth: resize === 'none' ? '300px' : '600px' }}>
                 <Search
                     style={{ display: resize }}
                     placeholder="input search text"
@@ -94,9 +97,10 @@ function NavPage(props) {
                     <Badge dot={true} count={1}>
                         <BellOutlined style={{ fontSize: 20 }} />
                     </Badge>
+                    <Button type="link" onClick={() => { goLogin() }}>退出</Button>
                 </div>
             </div>
         </div>
-    )
+        : '')
 }
 export default connect(({ loading }) => ({ loading }))(NavPage)

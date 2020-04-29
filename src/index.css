@@ -220,3 +220,18 @@ table {
 #nprogress .bar {
   background: #ffbf00 !important;
 }
+
+@font-face {
+  font-family: 'FZFANGJHJW_XIAN';
+  src: url('../static/FZFANGJHJW_XIAN.TTF');
+}
+
+@font-face {
+  font-family: 'FZLTDHJW';
+  src: url('../static/FZLTDHJW.TTF');
+}
+
+@font-face {
+  font-family: 'JIJIAN';
+  src: url('../static/潮字社风云简.ttf');
+}

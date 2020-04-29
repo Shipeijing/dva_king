@@ -7,12 +7,14 @@ import UserPage from './pages/User/Index';
 import FriendsPage from './pages/Friends/Index';
 import StatisticsPage from './pages/Statistics/Index';
 import NavPage from './components/Nav'
+import LoginPage from './components/Login'
 function RouterConfig({ history }) {
   return (
     <>
       <NavPage></NavPage>
       <Router history={history}>
         <Switch>
+          <Route path="/Login" exact component={LoginPage} />
           <Route path="/" exact component={IndexPage} />
           <Route path="/Chat" exact component={ChatPage} />
           <Route path="/Share" exact component={SharePage} />

@@ -9,7 +9,7 @@ export default {
     disableCSSModules: false,
     proxy: {
         "/api": {
-            target: "http://your-api-server",
+            target: "http://localhost:3000",
             changeOrigin: true
         }
     },
