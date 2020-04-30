@@ -14,7 +14,6 @@ function index(props) {
     const onFinishFailed = errorInfo => {
         console.log('Failed:', errorInfo);
     };
-
     const Login =
         <div>
             <h1>欢迎登录</h1>
@@ -30,7 +29,7 @@ function index(props) {
                     name="username"
                     rules={[{ required: true, message: 'Please input your username!' }]}
                 >
-                    <Input prefix={<UserOutlined />} />
+                    <Input value={props.formData.Uid} prefix={<UserOutlined />} />
                 </Form.Item>
 
                 <Form.Item
@@ -38,7 +37,7 @@ function index(props) {
                     name="password"
                     rules={[{ required: true, message: 'Please input your password!' }]}
                 >
-                    <Input.Password prefix={<LockOutlined />} />
+                    <Input.Password value={props.formData.Pwd} prefix={<LockOutlined />} />
                 </Form.Item>
 
                 <Form.Item style={{ textAlign: 'left' }} name="remember" valuePropName="checked">
@@ -46,7 +45,12 @@ function index(props) {
                 </Form.Item>
 
                 <Form.Item>
-                    <Button style={{ width: '100%' }} type="primary" htmlType="submit">
+                    <Button onClick={() => {
+                        props.dispatch({
+                            type: 'UserActive/login',
+                            data: props.formData
+                        })
+                    }} style={{ width: '100%' }} type="primary" htmlType="submit">
                         提交
               </Button>
                 </Form.Item>
@@ -148,7 +152,8 @@ function index(props) {
 function mapStateToProps(state) {
     const store = state.UserActive
     return {
-        status: store.status
+        status: store.status,
+        formData: store.formData
     }
 }
 export default connect(mapStateToProps)(index)

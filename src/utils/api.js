@@ -1,3 +1,4 @@
+const api = '/api'
 export default {
-    login: '/login'
+    login: api + '/login'
 }

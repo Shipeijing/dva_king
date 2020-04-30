@@ -13,7 +13,9 @@ function checkStatus(response) {
   error.response = response;
   throw error;
 }
-
+const headers = {
+  'Content-Type': 'application/json'
+}
 /**
  * Requests a URL, returning a promise.
  *
@@ -21,8 +23,8 @@ function checkStatus(response) {
  * @param  {object} [options] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
-export default function request(url, options) {
-  return fetch(url, options)
+export default function request(url, method, data) {
+  return fetch(url, { method, headers, body: JSON.stringify(data) })
     .then(checkStatus)
     .then(parseJSON)
     .then(data => ({ data }))

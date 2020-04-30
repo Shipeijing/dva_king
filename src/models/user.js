@@ -5,7 +5,7 @@ export default {
     namespace: 'UserActive',
 
     state: {
-        status: 1,
+        status: 0,
         formData: {
             Uid: 1,
             Pwd: ''
@@ -17,11 +17,11 @@ export default {
         },
     },
     effects: {
-        *login({ payload: state }, { call, put }) {
-            yield call(request(api.login, {
-                method: 'POST',
-                body: state.formData
-            }))
+        *login(action, { call, put }) {
+            yield call(request(api.login, 'POST', action.data).then((res => {
+
+            })
+            ))
             yield put({ type: 'save' });
         },
     },
